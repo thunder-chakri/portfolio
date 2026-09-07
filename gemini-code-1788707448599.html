@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gollapalli Jnana Chaitanya Reddy | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-glow: rgba(99, 102, 241, 0.35);
+      --accent: #38bdf8;
+      --bg-dark: #090d16;
+      --card-bg: rgba(18, 24, 40, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 8%;
+      background: rgba(9, 13, 22, 0.75);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Hero Section with Video Background */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 8%;
+      overflow: hidden;
+    }
+
+    .video-bg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      filter: brightness(0.6) contrast(1.1);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(9, 13, 22, 0.45) 0%, rgba(9, 13, 22, 0.95) 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 850px;
+      text-align: center;
+      padding: 2.5rem;
+      background: rgba(13, 18, 30, 0.55);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.75rem 1.6rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      box-shadow: 0 10px 25px var(--primary-glow);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px var(--primary-glow);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* General Sections */
+    section {
+      padding: 6rem 8%;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 3.5rem;
+      font-size: 1.05rem;
+    }
+
+    /* Grid Layouts */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 2rem;
+    }
+
+    /* Card Component */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .card i.card-icon {
+      font-size: 1.8rem;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      display: inline-block;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 1.25rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--accent);
+    }
+
+    /* Timeline / Experience */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 2px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .timeline-date {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    /* Contact Footer */
+    footer {
+      border-top: 1px solid var(--card-border);
+      padding: 4rem 8% 2rem;
+      text-align: center;
+      background: #060910;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .social-links a {
+      color: var(--text-muted);
+      font-size: 1.4rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.1rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Jnana Chaitanya<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Training</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <video class="video-bg" autoplay muted loop playsinline>
+      <source src="Animate_reference_image_characte…_202609062020.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="badge">
+        <i class="fa-solid fa-microchip"></i> Electronics & Communication Engineer
+      </div>
+      <h1>Hi, I'm Gollapalli Jnana Chaitanya Reddy</h1>
+      <p>
+        Detail-oriented engineer skilled in Embedded Systems, IoT Automation, Relational Databases, and Generative AI.
+      </p>
+      <div class="cta-buttons">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fa-solid fa-code"></i> View Projects
+        </a>
+        <a href="https://github.com/thunder-chakri" target="_blank" class="btn btn-secondary">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="https://linkedin.com/in/jnana-chaitanya-reddy" target="_blank" class="btn btn-secondary">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-subtitle">Electronics student driving automation and intelligent systems</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <i class="fa-solid fa-graduation-cap card-icon"></i>
+        <h3>Education & Academic Foundation</h3>
+        <p>
+          <strong>B.Tech in Electronics & Communication Engineering</strong><br>
+          VEMU Institute of Technology (2023 - 2027) &bull; CGPA: 7.5 / 10.0
+        </p>
+        <br>
+        <p>
+          <strong>Intermediate (Higher Secondary Education)</strong><br>
+          Sai Sri Chaithanya Junior College (2021 - 2023) &bull; 79.3%
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-bullseye card-icon"></i>
+        <h3>Engineering Focus</h3>
+        <p>
+          Adept at combining Software-Defined Networking (SDN), MySQL database management, and Generative AI prompting to optimize processes and tackle modern engineering problems with strong foundations in Linux environments.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" style="background: rgba(255, 255, 255, 0.01);">
+    <h2 class="section-title">Technical Expertise</h2>
+    <p class="section-subtitle">Core competencies across software, networking, and embedded systems</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <i class="fa-solid fa-code card-icon"></i>
+        <h3>Languages & Scripting</h3>
+        <p>Proficient in scripting, programming, and database queries for robust automation.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">C</span>
+          <span class="tag">Bash Scripting</span>
+          <span class="tag">SQL (MySQL)</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-microchip card-icon"></i>
+        <h3>Core Engineering & IoT</h3>
+        <p>Hands-on development with circuit designs, signal processing, and microcontrollers.</p>
+        <div class="tags">
+          <span class="tag">Embedded Systems</span>
+          <span class="tag">PCB Design</span>
+          <span class="tag">Signal Processing</span>
+          <span class="tag">Hardware Architecture</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-network-wired card-icon"></i>
+        <h3>Networking & Security</h3>
+        <p>Solid understanding of modern network architectures and security practices.</p>
+        <div class="tags">
+          <span class="tag">SDN</span>
+          <span class="tag">Wireless Security</span>
+          <span class="tag">IAM</span>
+          <span class="tag">Penetration Testing</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-database card-icon"></i>
+        <h3>Databases & Backend</h3>
+        <p>Experience organizing, querying, and structuring relational database environments.</p>
+        <div class="tags">
+          <span class="tag">MySQL</span>
+          <span class="tag">Schema Design</span>
+          <span class="tag">Query Optimization</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-terminal card-icon"></i>
+        <h3>Tools & Environments</h3>
+        <p>Operating system navigation, version control, and emerging AI tools.</p>
+        <div class="tags">
+          <span class="tag">Linux CLI</span>
+          <span class="tag">Git</span>
+          <span class="tag">Termux</span>
+          <span class="tag">Generative AI Prompting</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-chalkboard-user card-icon"></i>
+        <h3>Key Presentations</h3>
+        <p>Presented technical seminar on Software-Defined Networking (SDN) detailing network layers and programmable data planes.</p>
+        <div class="tags">
+          <span class="tag">SDN Seminar</span>
+          <span class="tag">Technical Leadership</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Featured Projects & Research</h2>
+    <p class="section-subtitle">Real-world implementations and research initiatives</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <i class="fa-solid fa-robot card-icon"></i>
+        <h3>Resume Screener Agent</h3>
+        <p>
+          Automated Python-based application integrated with MySQL databases to parse, screen candidate resumes, and query applicant data to generate structured reports.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Automation</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-leaf card-icon"></i>
+        <h3>Waste to Energy Conversion</h3>
+        <p>
+          Drafted an IEEE-formatted academic research paper detailing alternative energy systems, architectural modeling, and performance optimization techniques.
+        </p>
+        <div class="tags">
+          <span class="tag">Academic Research</span>
+          <span class="tag">IEEE Format</span>
+          <span class="tag">Energy Systems</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <i class="fa-solid fa-house-signal card-icon"></i>
+        <h3>IoT Smart Home & Robotics</h3>
+        <p>
+          Constructed a Wi-Fi-enabled home automation network using microcontrollers along with an autonomous IR/ultrasonic obstacle-avoiding robotic vehicle.
+        </p>
+        <div class="tags">
+          <span class="tag">Microcontrollers</span>
+          <span class="tag">IoT</span>
+          <span class="tag">Ultrasonic/IR</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications" style="background: rgba(255, 255, 255, 0.01);">
+    <h2 class="section-title">Certifications & Training</h2>
+    <p class="section-subtitle">Professional milestones and specialized technical coursework</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">September 2026</div>
+        <h3>Junior AI Research Associate — Rooman Technologies</h3>
+        <p>Hire, Train & Deploy Programme focused on modern artificial intelligence workflows.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">June 2026</div>
+        <h3>Operating Systems Course (SWAYAM / Anna University)</h3>
+        <p>4-Credit comprehensive course covering kernel architecture, process management, and concurrency (71% Score).</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">January 2026</div>
+        <h3>Cybersecurity Analyst Job Simulation — Forage (Tata)</h3>
+        <p>Hands-on simulation covering identity management, access control, and incident response.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2>Let's Connect</h2>
+    <p style="color: var(--text-muted); margin-top: 0.5rem;">
+      Email: <a href="mailto:jnanachaitanyareddygollapalli@gmail.com" style="color: var(--accent); text-decoration: none;">jnanachaitanyareddygollapalli@gmail.com</a> | Phone: +91 9182168067
+    </p>
+
+    <div class="social-links">
+      <a href="https://github.com/thunder-chakri" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/in/jnana-chaitanya-reddy" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="mailto:jnanachaitanyareddygollapalli@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+
+    <p style="font-size: 0.85rem; color: #55627a;">
+      &copy; 2026 Gollapalli Jnana Chaitanya Reddy. All Rights Reserved.
+    </p>
+  </footer>
+
+</body>
+</html>
